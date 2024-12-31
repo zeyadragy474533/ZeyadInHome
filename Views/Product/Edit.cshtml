@@ -1,0 +1,30 @@
+﻿@model ZeyadInHome.Models.Product
+<h1>Edit on Product</h1>
+
+<form asp-action="Edit" method="post">
+	<dev>
+		<input asp-for="Id" type="hidden" />
+	</dev>
+	<dev>
+		<label>Name</label>
+		<input asp-for="Name"  />
+	</dev>
+	<dev>
+		<label>Description</label>
+		<input asp-for="Description"   />
+	</dev>
+	<dev>
+		<label>Price</label>
+		<input asp-for="Price" />
+	</dev>
+	<dev>
+		<label>StockQuantity</label>
+		<input asp-for="StockQuantity"  />
+	</dev>
+	<dev>
+		<label>Category</label>
+		<input asp-for="Category" />
+	</dev>
+
+	<button class="btn btn-success" type="submit">Save Change</button>
+</form>

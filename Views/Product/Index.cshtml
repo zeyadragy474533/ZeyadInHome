@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ZeyadInHome.Models.Product>
+
+       <table class="table">
+      	<thead>
+     	<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+			@foreach(var product in Model){
+				<tr>
+				<td>@product.Id</td>
+				<td>@product.Name</td>
+				<td>
+					<form class="d-inline" asp-action="Delete" method="post">
+						<input type="hidden" name="id_input" value="@product.Id" />
+						<button class="btn btn-danger">Delete</button>
+					</form>
+
+					<form class="d-inline" asp-action="Edit" method="get">
+						<input type="hidden" name="Id" value="@product.Id" />
+						<button class="btn btn-success">Update</button>
+
+					</form>
+					<form class="d-inline" asp-action="Details" method="post">
+						<input type="hidden" name="id_input" value="@product.Id" />
+						<button class="btn btn-secondary">Details</button>
+					</form>
+
+				</td>
+				</tr>
+			}
+		
+	</tbody>
+ </table>
+<h1>Create Product</h1>
+
+<form asp-action="Create" method="post">
+	 <dev>
+		 <label>Name</label>
+		<input name="Name" />
+</dev>
+	<dev>
+		<label>Description</label>
+		<input name="Description" />
+	</dev>
+	<dev>
+		<label>Price</label>
+		<input name="Price" />
+	</dev>
+	<dev>
+		<label>StockQuantity</label>
+		<input name="StockQuantity" />
+	</dev>
+	<dev>
+		<label>Category</label>
+		<input name="Category" />
+	</dev>
+	
+	<button class="btn btn-success" type="submit">Save</button>
+ </form>
